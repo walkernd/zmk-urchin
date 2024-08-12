@@ -145,11 +145,11 @@
         // Function keys with modifiers
 
         fnc_layer {
-            label = "FRow";
+            label = "Func";
             bindings = <
-&kp F1       &kp F2     &kp F3    &kp F4    &kp F5       &kp F6        &kp F7               &kp F8                 &kp F9    &kp F10
-&kp F11      &kp F12    &none     &none     &none        &kp C_MUTE    &kp K_VOLUME_UP      &kp C_AL_CALCULATOR    &trans    &trans
-&kp TILDE    &none      &none     &none     &kp LC(B)    &bt BT_NXT    &kp K_VOLUME_DOWN    &kp RIGHT_ALT          &none     &kp BACKSLASH
+&kp F1       &kp F2     &kp F3    &kp F4    &kp F5       &kp F6        &kp F7             &kp F8                 &kp F9    &kp F10
+&kp F11      &kp F12    &none     &none     &none        &kp C_MUTE    &kp C_VOLUME_UP    &kp C_AL_CALCULATOR    &trans    &trans
+&kp TILDE    &none      &none     &none     &kp LC(B)    &bt BT_NXT    &kp C_VOL_DN       &kp RIGHT_ALT          &none     &kp BACKSLASH
                                   &none     &none        &none         &none
             >;
         };
