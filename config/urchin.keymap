@@ -67,11 +67,11 @@
         // sometimes my device thinks a modifier is being held down
         // pressing all modifiers fixes it.
 
-        unstick: unstick {
-            label = "ZM_unstick";
+        Task_Manager: Task_Manager {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
+            bindings = <&kp LEFT_CONTROL &kp LEFT_SHIFT &kp ESCAPE>;
+            label = "TASK_MANAGER";
         };
     };
 
@@ -136,7 +136,7 @@
             label = "num";
             bindings = <
 &kp N1          &kp N2       &kp N3       &kp N4       &kp N5            &kp TILDE          &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS    &kp LEFT_BRACKET    &kp RIGHT_BRACKET
-&kp NUMBER_6    &kp N7       &kp N8       &kp N9       &kp N0            &kp EXCLAMATION    &kp EQUAL               &kp UP_ARROW             &kp K_CALC          &kp SQT
+&kp NUMBER_6    &kp N7       &kp N8       &kp N9       &kp N0            &kp EXCLAMATION    &kp EQUAL               &kp UP_ARROW             &kp K_CALC          &mt TILDE SQT
 &kp LC(Z)       &kp LC(X)    &kp LC(C)    &kp LC(V)    &kp LC(A)         &kp AT_SIGN        &kp LEFT_ARROW          &kp DOWN_ARROW           &kp RIGHT_ARROW     &mt TILDE MINUS
                                           &none        &sk LEFT_SHIFT    &kp DELETE         &kp ENTER
             >;
@@ -148,10 +148,10 @@
         fnc_layer {
             label = "Func";
             bindings = <
-&kp F1       &kp F2     &kp F3    &kp F4    &kp F5       &kp F6        &kp F7             &kp F8                 &kp F9               &kp F10
-&kp F11      &kp F12    &none     &none     &none        &kp C_MUTE    &kp C_VOLUME_UP    &kp C_AL_CALCULATOR    &ext_power EP_ON     &trans
-&kp TILDE    &none      &none     &none     &kp LC(B)    &bt BT_NXT    &kp C_VOL_DN       &kp RIGHT_ALT          &ext_power EP_OFF    &kp BACKSLASH
-                                  &none     &none        &none         &none
+&kp F1     &kp F2    &kp F3    &kp F4    &kp F5       &none         &none              &none                  &none                &none
+&kp F6     &kp F7    &kp F8    &kp F9    &kp F10      &kp C_MUTE    &kp C_VOLUME_UP    &kp C_AL_CALCULATOR    &ext_power EP_ON     &Task_Manager
+&kp F11    &none     &none     &none     &kp LC(B)    &bt BT_NXT    &kp C_VOL_DN       &kp RIGHT_ALT          &ext_power EP_OFF    &kp BACKSLASH
+                               &none     &none        &none         &none
             >;
         };
 
