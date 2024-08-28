@@ -119,6 +119,11 @@
             bindings = <&sk LEFT_CONTROL>;
             key-positions = <25 26>;
         };
+
+        Delete {
+            bindings = <&kp DELETE>;
+            key-positions = <4 3>;
+        };
     };
 
     keymap {
