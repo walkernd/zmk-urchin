@@ -159,9 +159,9 @@
         fnc_layer {
             label = "Func";
             bindings = <
-&kp F1     &kp F2    &kp F3    &kp F4    &kp F5       &none         &none              &none                  &none                &none
-&kp F6     &kp F7    &kp F8    &kp F9    &kp F10      &kp C_MUTE    &kp C_VOLUME_UP    &kp C_AL_CALCULATOR    &ext_power EP_ON     &Task_Manager
-&kp F11    &none     &none     &none     &kp LC(B)    &bt BT_NXT    &kp C_VOL_DN       &kp RIGHT_ALT          &ext_power EP_OFF    &kp BACKSLASH
+&kp F1     &kp F2    &kp F3    &kp F4    &kp F5       &none         &none              &none                  &none               &none
+&kp F6     &kp F7    &kp F8    &kp F9    &kp F10      &kp C_MUTE    &kp C_VOLUME_UP    &kp C_AL_CALCULATOR    &ext_power EP_ON    &Task_Manager
+&kp F11    &none     &none     &none     &kp LC(B)    &bt BT_NXT    &kp C_VOL_DN       &kp RIGHT_ALT          &trans              &kp BACKSLASH
                                &none     &none        &none         &none
             >;
         };
