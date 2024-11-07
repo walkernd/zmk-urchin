@@ -125,6 +125,11 @@
             bindings = <&kp DELETE>;
             key-positions = <4 3>;
         };
+
+        Backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <13 14>;
+        };
     };
 
     keymap {
