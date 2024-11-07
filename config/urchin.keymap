@@ -118,7 +118,7 @@
 
         Control {
             bindings = <&sk RIGHT_CONTROL>;
-            key-positions = <29 28>;
+            key-positions = <10 11>;
         };
 
         Delete {
