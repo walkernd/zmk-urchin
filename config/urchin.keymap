@@ -106,6 +106,32 @@
 
             label = "CONTROL_BACK";
         };
+
+        Control_Left_arrow: Control_Left_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp LEFT_ARROW>,
+                <&macro_release>;
+
+            label = "CONTROL_LEFT_ARROW";
+        };
+
+        Control_Right_Arrow: Control_Right_Arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp RIGHT_ARROW>,
+                <&macro_release>;
+
+            label = "CONTROL_RIGHT_ARROW";
+        };
     };
 
     combos {
@@ -165,6 +191,16 @@
         Contol_Del {
             bindings = <&Control_Del>;
             key-positions = <3 30 4>;
+        };
+
+        Control_Left_Arrow {
+            bindings = <&Control_Left_arrow>;
+            key-positions = <10 30 26>;
+        };
+
+        Control_Right_Arrow {
+            bindings = <&Control_Right_Arrow>;
+            key-positions = <10 30 28>;
         };
     };
 
