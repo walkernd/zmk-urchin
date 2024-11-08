@@ -195,12 +195,12 @@
 
         Control_Left_Arrow {
             bindings = <&Control_Left_arrow>;
-            key-positions = <10 30 26>;
+            key-positions = <30 26 20>;
         };
 
         Control_Right_Arrow {
             bindings = <&Control_Right_Arrow>;
-            key-positions = <10 30 28>;
+            key-positions = <30 28 20>;
         };
     };
 
