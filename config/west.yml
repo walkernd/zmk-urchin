@@ -6,13 +6,19 @@ manifest:
     # duckyb
     - name: duckyb
       url-base: https://github.com/duckyb
+    - name: urob
+      url-base: https://github.com/urob
+
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: 6b4d591c3792c89653e88772f18a3b063fb16d27 # main
+      revision: 408237021554116da09c4887ac1a00eb1ddd6919 # main
       import: app/west.yml
     - name: urchin-zmk-module
       remote: duckyb
       revision: 57ef72b1fdd3c59c5ac32d2ad3b13289bc17f358 # main
+    - name: zmk-helpers
+      remote: urob
+      revision: 230c7e18ee3c82325352287db29b59f53f20fa2a # main
   self:
     path: config
