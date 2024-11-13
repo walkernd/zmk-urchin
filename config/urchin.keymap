@@ -14,13 +14,25 @@
 #include "zmk-helpers/key-labels/34.h"                                      // key-position labels
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left-hand keys
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
-#define THUMBS LH1 LH0 RH0 RH1																							// thumb keys
+#define THUMBS LH1 LH0 RH0 RH1												// thumb keys
 
+
+/*                KEY POSITIONS
+
+  ╭─────────────────────╮ ╭─────────────────────╮
+  │ LT4 LT3 LT2 LT1 LT0 │ │ RT0 RT1 RT2 RT3 RT4 │
+  │ LM4 LM3 LM2 LM1 LM0 │ │ RM0 RM1 RM2 RM3 RM4 │
+  │ LB4 LB3 LB2 LB1 LB0 │ │ RB0 RB1 RB2 RB3 RB4 │
+  ╰───────────╮ LH1 LH0 │ │ RH0 RH1 ╭───────────╯
+              ╰─────────╯ ╰─────────╯ */
 
 // Layer definitions
-#define BASE 0
+#define BASE    0
+#define NUM     1
+#define SYS     2
 // -----------------
 
+#define ___     &trans
 
 /* left-hand HRMs */
 ZMK_HOLD_TAP(lhm,
@@ -44,31 +56,23 @@ ZMK_HOLD_TAP(rhm,
     hold-trigger-on-release;             // delay positional check until key-release
 )
 
+&lt {
+    tapping-term-ms = <200>;
+    quick-tap-ms = <175>;
+};
+
 / {
 
 	behaviors {
-			/* rhm: right_homerow_mods {*/
-			/*compatible = "zmk,behavior-hold-tap";*/
-			/*label = "RIGHT_HOMEROW_MODS";*/
-			/*#binding-cells = <2>;*/
-			/*tapping-term-ms = <280>;*/
-			/*quick_tap_ms = <175>;*/
-			/*flavor = "balanced";*/
-			/*bindings = <&kp>, <&kp>;*/
-			/*hold-trigger-key-positions = <KEYS_L THUMBS>;*/
-			/* };*/
-
-		/*lhm: left_homerow_mods {*/
-		/*	compatible = "zmk,behavior-hold-tap";*/
-		/*	label = "LEFT_HOMEROW_MODS";*/
-		/*	#binding-cells = <2>;*/
-		/*	tapping-term-ms = <280>;*/
-		/*	quick_tap_ms = <175>;*/
-		/*	flavor = "balanced";*/
-		/*	bindings = <&kp>, <&kp>;*/
-		/*	hold-trigger-key-positions = <KEYS_R THUMBS>;*/
-		/*  };*/
-		/**/
+        combos {
+            compatible = "zmk,combos";
+            combo_esc {
+                timeout-ms = <50>;
+                key-positions = <LT2 LT3>;
+                bindings = <&kp ESC>;
+                layers = <BASE>;
+            };
+        };
 	};
 
 	keymap {
@@ -77,11 +81,23 @@ ZMK_HOLD_TAP(rhm,
 		default_layer {
 			label = "Base";
 			bindings = <
-			&kp Q       &kp W       &kp E						&kp R         &kp T         &kp Y					&kp U         &kp I					&kp O         &kp P
-			&lhm LGUI A	&lhm LALT S  &lhm LCTRL D		&lhm LSHIFT F  &kp G         &kp H					&rhm RSHIFT J  &rhm RCTRL K		&rhm RALT L    &rhm RGUI SEMI
-			&kp Z       &kp X       &kp C						&kp V         &kp B         &kp N					&kp M         &kp COMMA			&kp DOT       &kp SLASH
-																							&kp SPACE			&kp TAB				&kp BACKSPACE &kp RETURN
+			&kp Q           &kp W           &kp E			&kp R           &kp T         &kp Y	    &kp U           &kp I					&kp O           &kp P
+			&lhm LGUI A	    &lhm LALT S     &lhm LCTRL D	&lhm LSHIFT F   &kp G         &kp H	    &rhm RSHIFT J   &rhm RCTRL K		    &rhm RALT L     &rhm RGUI SEMI
+			&kp Z           &kp X           &kp C			&kp V           &kp B         &kp N	    &kp M         &kp COMMA			&kp DOT       &kp SLASH
+						    &kp SPACE			&kp TAB				&lt NUM BACKSPACE &kp RETURN
 			>;
 		};
   };
 };
+
+ZMK_LAYER(num,
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+     ___           &kp N1        &kp N2        &kp N3        ___             ___           ___           ___           ___           ___          
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp N0        &kp N4        &kp N5        &kp N6        ___             ___           ___           ___           ___           ___          
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     ___           &kp N7        &kp N8        &kp N9        ___             ___           ___           ___           ___           ___          
+// ╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
+                                               ___           ___             ___           ___                                                    
+//                                           ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯                                          
+)
