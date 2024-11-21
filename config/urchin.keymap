@@ -133,20 +133,11 @@
             label = "CONTROL_RIGHT_ARROW";
         };
 
-        Chat_GPT: Chat_GPT {
+        Sniping_Tool: Sniping_Tool {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_WIN &kp R>,
-                <&macro_release>,
-                <&kp M &kp I &kp C &kp R &kp O &kp S &kp O &kp F &kp T &kp MINUS &kp E &kp D &kp G &kp E &kp COLON &kp ENTER>,
-                <&macro_press>,
-                <&kp LEFT_CONTROL &kp L>,
-                <&macro_release>,
-                <&kp H &kp T &kp T &kp P &kp S &kp COLON &kp FSLH &kp FSLH &kp C &kp H &kp A &kp T &kp DOT &kp O &kp P &kp E &kp N &kp A &kp I &kp DOT &kp C &kp O &kp M &kp FSLH &kp ENTER>;
-
-            label = "CHAT_GPT";
+            bindings = <&kp LEFT_WIN &kp LEFT_SHIFT &kp S>;
+            label = "SNIPING_TOOL";
         };
     };
 
