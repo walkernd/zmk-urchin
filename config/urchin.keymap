@@ -132,13 +132,6 @@
 
             label = "CONTROL_RIGHT_ARROW";
         };
-
-        Sniping_Tool: Sniping_Tool {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_WIN &kp LEFT_SHIFT &kp S>;
-            label = "SNIPING_TOOL";
-        };
     };
 
     combos {
