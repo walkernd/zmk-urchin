@@ -215,11 +215,6 @@
             bindings = <&Control_Right_Arrow>;
             key-positions = <30 28 20>;
         };
-
-        Chat-GPT {
-            bindings = <&Chat_GPT>;
-            key-positions = <5 6>;
-        };
     };
 
     keymap {
