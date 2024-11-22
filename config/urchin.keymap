@@ -132,6 +132,19 @@
 
             label = "CONTROL_RIGHT_ARROW";
         };
+
+        Snip: Snip {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_GUI &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp S>,
+                <&macro_release>;
+
+            label = "SNIP";
+        };
     };
 
     combos {
@@ -201,6 +214,11 @@
         Control_Right_Arrow {
             bindings = <&Control_Right_Arrow>;
             key-positions = <30 28 20>;
+        };
+
+        Snip {
+            bindings = <&Snip>;
+            key-positions = <3 2 4>;
         };
     };
 
