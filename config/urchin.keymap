@@ -76,7 +76,8 @@
                 <&kp LEFT_CONTROL &kp LEFT_SHIFT>,
                 <&macro_tap>,
                 <&kp ESCAPE>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_CONTROL &kp LEFT_SHIFT>;
 
             label = "TASK_MANAGER";
         };
@@ -89,7 +90,8 @@
                 <&kp LEFT_CONTROL>,
                 <&macro_tap>,
                 <&kp DELETE>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
 
             label = "CONTROL_BACKSPACE";
         };
@@ -102,7 +104,8 @@
                 <&kp LEFT_CONTROL>,
                 <&macro_tap>,
                 <&kp BACKSPACE>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
 
             label = "CONTROL_BACK";
         };
@@ -115,7 +118,8 @@
                 <&kp LEFT_CONTROL>,
                 <&macro_tap>,
                 <&kp LEFT_ARROW>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
 
             label = "CONTROL_LEFT_ARROW";
         };
@@ -128,7 +132,8 @@
                 <&kp LEFT_CONTROL>,
                 <&macro_tap>,
                 <&kp RIGHT_ARROW>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
 
             label = "CONTROL_RIGHT_ARROW";
         };
@@ -141,7 +146,8 @@
                 <&kp LEFT_GUI &kp LEFT_SHIFT>,
                 <&macro_tap>,
                 <&kp S>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_WIN &kp LEFT_SHIFT>;
 
             label = "SNIP";
         };
