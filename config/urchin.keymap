@@ -136,13 +136,7 @@
         Sniping_Tool: Sniping_Tool {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_WIN &kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&kp S>,
-                <&macro_release>;
-
+            bindings = <&kp LEFT_WIN &kp LEFT_SHIFT &kp S>;
             label = "SNIPING_TOOL";
         };
     };
@@ -250,7 +244,7 @@
         fnc_layer {
             label = "Func";
             bindings = <
-&kp F1     &kp F2    &kp F3    &kp F4    &kp F5       &ext_power EP_ON    &ext_power EP_OFF    &none                  &none        &Sniping_Tool
+&kp F1     &kp F2    &kp F3    &kp F4    &kp F5       &ext_power EP_ON    &ext_power EP_OFF    &none                  &none        &none
 &kp F6     &kp F7    &kp F8    &kp F9    &kp F10      &kp C_MUTE          &kp C_VOLUME_UP      &kp C_AL_CALCULATOR    &mkp MB1     &Task_Manager
 &kp F11    &none     &none     &none     &kp LC(B)    &bt BT_NXT          &kp C_VOL_DN         &kp RIGHT_ALT          &mkp RCLK    &kp BACKSLASH
                                &none     &none        &none               &none
