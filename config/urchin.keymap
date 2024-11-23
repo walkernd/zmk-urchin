@@ -226,6 +226,11 @@
             bindings = <&Snip>;
             key-positions = <3 2 4>;
         };
+
+        Right_Control {
+            bindings = <&kp RIGHT_CONTROL>;
+            key-positions = <16 17>;
+        };
     };
 
     keymap {
