@@ -231,6 +231,11 @@
             bindings = <&kp RIGHT_CONTROL>;
             key-positions = <16 17>;
         };
+
+        clear_bt {
+            bindings = <&bt BT_CLR>;
+            key-positions = <9 8 7>;
+        };
     };
 
     keymap {
