@@ -5,11 +5,12 @@
  */
 
 #include "keymap_italian.h"
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 // Layer definitions
 
@@ -248,7 +249,7 @@
             bindings = <
 &kp Q             &kp W    &kp F    &kp P    &kp G         &kp J            &kp L        &kp U        &kp Y      &kp SEMI
 &mt LEFT_GUI A    &kp R    &kp S    &kp T    &kp D         &kp H            &kp N        &kp E        &kp I      &kp O
-&kp Z             &kp X    &kp C    &kp V    &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
+&kp B             &kp X    &kp C    &kp V    &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
                                     &sl 1    &sk LSHIFT    &kp BACKSPACE    &kp SPACE
             >;
         };
