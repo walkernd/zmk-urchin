@@ -10,9 +10,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include "keymap_italian.h"
 
-# Increase idle sleep timeout to 70 minutes
-CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=4200000
-
 // Layer definitions
 #define BASE 0
 #define SYM 1
