@@ -199,18 +199,8 @@
         };
 
         Backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <13 14>;
-        };
-
-        Control_Backspace {
             bindings = <&Control_Back>;
-            key-positions = <13 30 14>;
-        };
-
-        Contol_Del {
-            bindings = <&Control_Del>;
-            key-positions = <3 30 4>;
+            key-positions = <13 14>;
         };
 
         Control_Left_Arrow {
