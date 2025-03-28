@@ -53,15 +53,13 @@
             bindings = <&kp>, <&kp>;
         };
 
-        layertap: layertap {
+        Layer_Tap: Layer_Tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYERTAP";
-            bindings = <&mo>, <&kp>;
+            label = "LAYER_TAP";
+            bindings = <&sl>, <&tog>;
 
             #binding-cells = <2>;
-            quick-tap-ms = <300>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <300>;
+            tapping-term-ms = <6>;
         };
     };
 
@@ -152,6 +150,160 @@
 
             label = "SNIP";
         };
+
+        Control_Down: Control_Down {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp DOWN_ARROW>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTROL_DOWN";
+        };
+
+        Control_Up: Control_Up {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp UP_ARROW>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTROL_UP";
+        };
+
+        Control_1: Control_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp NUMBER_1>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTROL_1";
+        };
+
+        Control_2: Control_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp NUMBER_2>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTROL_2";
+        };
+
+        Control_3: Control_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp NUMBER_3>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTROL_3";
+        };
+
+        Control_4: Control_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp NUMBER_4>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTROL_4";
+        };
+
+        Control_5: Control_5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp N5>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTROL_5";
+        };
+
+        Control_6: Control_6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp NUMBER_6>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTROL_6";
+        };
+
+        Control_7: Control_7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp N7>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTROL_7";
+        };
+
+        Control_8: Control_8 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp N8>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTROL_8";
+        };
+
+        Control_9: Control_9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp N9>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTROL_9";
+        };
     };
 
     combos {
@@ -237,10 +389,10 @@
         default_layer {
             label = "Alpha";
             bindings = <
-&kp Q             &kp W    &kp F    &kp P    &kp G         &kp J            &kp L        &kp U        &kp Y      &kp SEMI
-&mt LEFT_GUI A    &kp R    &kp S    &kp T    &kp D         &kp H            &kp N        &kp E        &kp I      &kp O
-&kp Z             &kp X    &kp C    &kp V    &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
-                                    &sl 1    &sk LSHIFT    &kp BACKSPACE    &kp SPACE
+&kp Q             &kp W    &kp F    &kp P             &kp G         &kp J            &kp L        &kp U        &kp Y      &kp SEMI
+&mt LEFT_GUI A    &kp R    &kp S    &kp T             &kp D         &kp H            &kp N        &kp E        &kp I      &kp O
+&kp Z             &kp X    &kp C    &kp V             &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
+                                    &Layer_Tap 1 3    &sk LSHIFT    &kp BACKSPACE    &kp SPACE
             >;
         };
 
@@ -266,6 +418,15 @@
 &kp F6     &kp F7    &kp F8    &kp F9    &kp F10      &kp C_MUTE          &kp C_VOLUME_UP      &kp C_AL_CALCULATOR    &mkp MB1     &Task_Manager
 &kp F11    &none     &none     &none     &kp LC(B)    &bt BT_NXT          &kp C_VOL_DN         &kp RIGHT_ALT          &mkp RCLK    &kp BACKSLASH
                                &none     &none        &none               &none
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&Control_1    &Control_2    &Control_3    &Control_4    &Control_5    &trans          &trans                 &trans           &trans                  &trans
+&Control_6    &Control_7    &Control_8    &Control_9    &trans        &trans          &Control_Back          &Control_Up      &Control_Del            &trans
+&trans        &trans        &trans        &trans        &trans        &trans          &Control_Left_arrow    &Control_Down    &Control_Right_Arrow    &trans
+                                          &trans        &trans        &Control_Del    &trans
             >;
         };
 
