@@ -425,7 +425,7 @@
             bindings = <
 &Control_1    &Control_2    &Control_3    &Control_4    &Control_5    &trans          &trans                 &trans           &trans                  &trans
 &Control_6    &Control_7    &Control_8    &Control_9    &trans        &trans          &Control_Back          &Control_Up      &Control_Del            &trans
-&trans        &trans        &trans        &trans        &trans        &trans          &Control_Left_arrow    &Control_Down    &Control_Right_Arrow    &trans
+&none         &none         &trans        &trans        &trans        &trans          &Control_Left_arrow    &Control_Down    &Control_Right_Arrow    &trans
                                           &trans        &trans        &Control_Del    &trans
             >;
         };
