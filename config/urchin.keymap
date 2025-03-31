@@ -53,20 +53,20 @@
             bindings = <&kp>, <&kp>;
         };
 
-        Layer_Tap: Layer_Tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP";
-            bindings = <&sl>, <&Tap_Layer>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
         Tap_Layer: Tap_Layer {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_LAYER";
             #binding-cells = <0>;
             bindings = <&sl 1>, <&tog 3>;
+        };
+
+        layer_hold_tap: layer_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_HOLD_TAP";
+            bindings = <&sl>, <&Tap_Layer>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
         };
     };
 
@@ -396,10 +396,10 @@
         default_layer {
             label = "Alpha";
             bindings = <
-&kp Q             &kp W    &kp F    &kp P         &kp G         &kp J            &kp L        &kp U        &kp Y      &kp SEMI
-&mt LEFT_GUI A    &kp R    &kp S    &kp T         &kp D         &kp H            &kp N        &kp E        &kp I      &kp O
-&kp Z             &kp X    &kp C    &kp V         &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
-                                    &Tap_Layer    &sk LSHIFT    &kp BACKSPACE    &kp SPACE
+&kp Q             &kp W    &kp F    &kp P                  &kp G         &kp J            &kp L        &kp U        &kp Y      &kp SEMI
+&mt LEFT_GUI A    &kp R    &kp S    &kp T                  &kp D         &kp H            &kp N        &kp E        &kp I      &kp O
+&kp Z             &kp X    &kp C    &kp V                  &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
+                                    &layer_hold_tap 1 0    &sk LSHIFT    &kp BACKSPACE    &kp SPACE
             >;
         };
 
