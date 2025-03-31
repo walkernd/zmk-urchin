@@ -52,22 +52,6 @@
             quick-tap-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
-
-        Tap_Layer: Tap_Layer {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_LAYER";
-            #binding-cells = <0>;
-            bindings = <&sl 1>, <&tog 3>;
-        };
-
-        layer_hold_tap: layer_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_HOLD_TAP";
-            bindings = <&sl>, <&Tap_Layer>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
     };
 
     macros {
@@ -386,6 +370,11 @@
             bindings = <&bt BT_CLR>;
             key-positions = <9 8 7>;
         };
+
+        control_layer {
+            bindings = <&to 3>;
+            key-positions = <20 21 22>;
+        };
     };
 
     keymap {
@@ -396,10 +385,10 @@
         default_layer {
             label = "Alpha";
             bindings = <
-&kp Q             &kp W    &kp F    &kp P                  &kp G         &kp J            &kp L        &kp U        &kp Y      &kp SEMI
-&mt LEFT_GUI A    &kp R    &kp S    &kp T                  &kp D         &kp H            &kp N        &kp E        &kp I      &kp O
-&kp Z             &kp X    &kp C    &kp V                  &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
-                                    &layer_hold_tap 1 0    &sk LSHIFT    &kp BACKSPACE    &kp SPACE
+&kp Q             &kp W    &kp F    &kp P    &kp G         &kp J            &kp L        &kp U        &kp Y      &kp SEMI
+&mt LEFT_GUI A    &kp R    &kp S    &kp T    &kp D         &kp H            &kp N        &kp E        &kp I      &kp O
+&kp Z             &kp X    &kp C    &kp V    &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
+                                    &sl 1    &sk LSHIFT    &kp BACKSPACE    &kp SPACE
             >;
         };
 
@@ -428,7 +417,7 @@
             >;
         };
 
-        layer_3 {
+        Control {
             bindings = <
 &Control_1    &Control_2    &Control_3    &Control_4    &Control_5    &trans          &trans                 &trans           &trans                  &trans
 &Control_6    &Control_7    &Control_8    &Control_9    &trans        &trans          &Control_Back          &Control_Up      &Control_Del            &trans
