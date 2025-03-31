@@ -311,15 +311,6 @@
 
             label = "CONTROL_9";
         };
-
-        Double_Tap_Layer_Toggle: Double_Tap_Layer_Toggle {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&sl 1 &sl 1>;
-            label = "DOUBLE_TAP_LAYER_TOGGLE";
-            wait-ms = <2>;
-            tap-ms = <200>;
-        };
     };
 
     combos {
@@ -405,10 +396,10 @@
         default_layer {
             label = "Alpha";
             bindings = <
-&kp Q             &kp W    &kp F    &kp P    &kp G         &kp J            &kp L        &kp U        &kp Y      &kp SEMI
-&mt LEFT_GUI A    &kp R    &kp S    &kp T    &kp D         &kp H            &kp N        &kp E        &kp I      &kp O
-&kp Z             &kp X    &kp C    &kp V    &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
-                                    &sl 1    &sk LSHIFT    &kp BACKSPACE    &kp SPACE
+&kp Q             &kp W    &kp F    &kp P         &kp G         &kp J            &kp L        &kp U        &kp Y      &kp SEMI
+&mt LEFT_GUI A    &kp R    &kp S    &kp T         &kp D         &kp H            &kp N        &kp E        &kp I      &kp O
+&kp Z             &kp X    &kp C    &kp V         &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
+                                    &Tap_Layer    &sk LSHIFT    &kp BACKSPACE    &kp SPACE
             >;
         };
 
