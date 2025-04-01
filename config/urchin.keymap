@@ -42,6 +42,24 @@
         // Enables holding the first mod-tap key
         // by performing a tap-release-hold sequence.
         // To use it: "&qt KEYCODE1 KEYCODE2"
+
+        Hold_tap: Hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP";
+            bindings = <&sl>, <&Tap_Tap>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        Tap_Tap: Tap_Tap {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_TAP";
+            #binding-cells = <0>;
+            bindings = <&sl 1>, <&to 3>;
+
+            tapping-term-ms = <250>;
+        };
     };
 
     macros {
@@ -381,10 +399,10 @@
         default_layer {
             label = "Alpha";
             bindings = <
-&kp Q             &kp W    &kp F    &kp P    &kp G         &kp J            &kp L        &kp U        &kp Y      &kp SEMI
-&mt LEFT_GUI A    &kp R    &kp S    &kp T    &kp D         &kp H            &kp N        &kp E        &kp I      &kp O
-&kp Z             &kp X    &kp C    &kp V    &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
-                                    &sl 1    &sk LSHIFT    &kp BACKSPACE    &kp SPACE
+&kp Q             &kp W    &kp F    &kp P            &kp G         &kp J            &kp L        &kp U        &kp Y      &kp SEMI
+&mt LEFT_GUI A    &kp R    &kp S    &kp T            &kp D         &kp H            &kp N        &kp E        &kp I      &kp O
+&kp Z             &kp X    &kp C    &kp V            &kp B         &kp K            &kp M        &kp COMMA    &kp DOT    &mt BACKSLASH SLASH
+                                    &Hold_tap 1 0    &sk LSHIFT    &kp BACKSPACE    &kp SPACE
             >;
         };
 
@@ -418,7 +436,7 @@
 &Control_1    &Control_2    &Control_3    &Control_4    &Control_5    &trans          &trans                 &trans           &trans                  &trans
 &Control_6    &Control_7    &Control_8    &Control_9    &trans        &trans          &Control_Back          &Control_Up      &Control_Del            &trans
 &none         &none         &trans        &trans        &trans        &trans          &Control_Left_arrow    &Control_Down    &Control_Right_Arrow    &trans
-                                          &trans        &trans        &Control_Del    &trans
+                                          &to 0         &trans        &Control_Del    &trans
             >;
         };
 
